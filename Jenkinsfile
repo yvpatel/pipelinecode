@@ -1,6 +1,6 @@
 pipeline {
   
-agent any
+agent build-node
   stages {
    
       stage('SCM') {
