@@ -5,7 +5,8 @@ agent any
    
       stage('SCM') {
         steps {
-           echo "pull the source code from GitHub repo"
+           echo 'Pulling Source code from GitHubRepo'
+           git 'https://github.com/yvpatel/simple-java-maven-app.git'
          }
       }
       stage('build') {
