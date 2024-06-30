@@ -11,12 +11,22 @@ agent any
       }
       stage('build') {
         steps {
-           echo "code is build & deployed"
+           echo "code fetch from gitrepo and generating artifect using maven"
+           sh 'mvn clean package'
          }
       }
-      stage('test') {
+      stage('Deployed') {
         steps {
-           echo "application is working fine"
+           echo "code is deployed to Production"
+           sh 'java -jar target/*.jar'
+         }
+
+     }
+
+      stage('Test') {
+        steps {
+           echo "code is working well"
+         
          }
 
      }
